@@ -1,0 +1,63 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "vibe-trading-livetennis"
+version = "0.1.0"
+description = "A Vibe-Trading data loader for tennis event-market price series (Polymarket, public + keyless), with optional Live Tennis API live-state enrichment. Observe-only."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "Live Tennis API", email = "hello@livetennisapi.com" }]
+keywords = ["vibe-trading", "tennis", "polymarket", "event-market", "backtest", "data-loader"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Office/Business :: Financial :: Investment",
+]
+dependencies = [
+    "httpx>=0.24",
+    "pandas>=1.5",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "ruff>=0.4",
+]
+
+[project.urls]
+Homepage = "https://livetennisapi.com"
+Documentation = "https://docs.livetennisapi.com"
+Source = "https://github.com/livetennisapi/vibe-trading-livetennis"
+"Free tier" = "https://livetennisapi.com/subscribe/free"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/vibe_trading_livetennis"]
+
+[tool.hatch.build.targets.sdist]
+include = [
+    "src/vibe_trading_livetennis",
+    "tests",
+    "README.md",
+    "SKILL.md",
+    "LICENSE",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
