@@ -9,7 +9,7 @@ description = "A Vibe-Trading data loader for tennis event-market price series (
 readme = "README.md"
 requires-python = ">=3.11"
 license = { text = "MIT" }
-authors = [{ name = "Live Tennis API", email = "hello@livetennisapi.com" }]
+authors = [{ name = "Synapse Research Ltd", email = "hello@livetennisapi.com" }]
 keywords = ["vibe-trading", "tennis", "polymarket", "event-market", "backtest", "data-loader"]
 classifiers = [
     "Development Status :: 4 - Beta",
@@ -37,6 +37,7 @@ Homepage = "https://livetennisapi.com"
 Documentation = "https://docs.livetennisapi.com"
 Source = "https://github.com/livetennisapi/vibe-trading-livetennis"
 "Free tier" = "https://livetennisapi.com/subscribe/free"
+Author = "https://synapsereality.io"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/vibe_trading_livetennis"]
