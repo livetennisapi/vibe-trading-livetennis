@@ -19,6 +19,7 @@ jobs:
         uses: actions/setup-python@v7
         with:
           python-version: ${{ matrix.python-version }}
+          # pip wheel cache, keyed on the Python version and pyproject.toml
           cache: pip
           cache-dependency-path: pyproject.toml
       - name: Install
